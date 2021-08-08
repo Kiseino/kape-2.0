@@ -26,16 +26,12 @@ OBJFORM_NEW.mstpegawai.Grid1_Load	= function(){
         searches: [
         	{ field: 'nip', caption: 'NIP',type:'text'}, 
             { field: 'nama', caption: 'Nama',type:'text'},
-            { field: 'alamat', caption: 'Alamat',type:'text'}, 
             { field: 'golongan', caption: 'Pangkat / Golongan',type:'text'}, 
             { field: 'jabatan', caption: 'Jabatan',type:'text'}
         ],
         columns: [   
             { field: 'nip', caption: 'Nip', size: '150px', sortable: true },  
             { field: 'nama', caption: 'Nama', size: '250px', sortable: true},
-            { field: 'tempat_lahir', caption: 'Tempat', size: '100px', sortable: true},
-            { field: 'tanggal_lahir', caption: 'Tanggal', size: '80px', sortable: true},
-            { field: 'alamat', caption: 'Alamat', size: '200px', sortable: true },	
             { field: 'golongan', caption: 'Golongan', size: '150px', sortable: true },
             { field: 'jabatan', caption: 'Jabatan', size: '150px', sortable: true },
             { field: 'cmdEdit', caption: '', size: '80px', sortable: false,attr:'align=center' },
@@ -67,23 +63,9 @@ OBJFORM_NEW.mstpegawai.Init 	= function(){
 		find("#cNip").select2("data","") ;
 		find("#cNip").select2("readonly",false) ;
 		find("#cNama").val("") ;
-		find("#cAlamat").val("") ;
-		find("#cTempat").val("") ;
-		find("#dTempat_Tgl").val("") ;
 		find("#cGolongan").val("") ;
-		find("#dGolongan_Tgl").val("") ;
 		find("#cJabatan").val("") ;
-		find("#dJabatan_Tgl").val("") ;
-		find("#nKerjaTahun").val("") ;
-		find("#nKerjaBulan").val("") ;
-		find("#cJabatan_Lat").val("") ;
-		find("#dJabatan_Lat_Tgl").val("") ;
-		find("#nJabatan_Lat").val("") ;
-		find("#cPendidikan").val("") ;
-		find("#nThLulus").val("") ;
-		find("#cIjazah").val("") ;
-		find("#cCatatan_Mutasi").val("") ;
-		find("#cKeterangan").val("") ;
+
 	}
 }
 
