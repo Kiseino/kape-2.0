@@ -40,7 +40,7 @@
                 <source type="audio/mpeg" src="./uploaded/tone/notif.mp3"></source>
             </audio>
             <header class="header">
-                <a href="http://sedotcode.blogspot.com/" rel="nofollow" class="logo">
+                <a href="./" rel="nofollow" class="logo">
                     <!-- Add the class icon to your logo image or logo icon to add the margining -->
                     <class="site_title"> <img src="images/Bulog-Putih.png" style="max-width: 175px;" ></a>
                 </a>
