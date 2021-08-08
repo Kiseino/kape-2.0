@@ -24,7 +24,7 @@
 		$dbData 		= $scDb->Browse("sppd","code",$cWhere) ; 
 		if($dbRow 		= $scDb->GetRow($dbData)){
 			echo('
-					alert("Maaf Petugas dengan melakukan Perjalanan Dinas") ;
+					alert("Maaf Petugas sedang melakukan Perjalanan Dinas") ;
 					OBJFORM_NEW.trsppd.Obj.find("#'.$id.'").select2("data",'.stripslashes($va['val']).') ; 
 					OBJFORM_NEW.trsppd.Obj.find("#'.$id.'").select2("open") ; 
 				') ; 

@@ -35,7 +35,7 @@
 
 		$vaDate			= scDate::Date2Var($dbRow['result_date']) ;
 		$vaTtd 			= array() ; 
-		$vaTtd[]		= array("x"=>"","1"=>"Singosari, " . $vaDate["Tgl"] . " " . $vaDate['Bulan'] . " " . $vaDate['Tahun'] ) ; 
+		$vaTtd[]		= array("x"=>"","1"=>"Bandung, " . $vaDate["Tgl"] . " " . $vaDate['Bulan'] . " " . $vaDate['Tahun'] ) ; 
 		$vaTtd[]		= array("x"=>"","1"=>"PETUGAS") ; 
 		$vaTtd[]		= array("x"=>"","1"=>"") ; 
 		$vaTtd[]		= array("x"=>"","1"=>"") ; 
@@ -67,7 +67,7 @@
 												  "3"	=>array("width"=>2,"wrap"=>1),
 												  "4"	=>array("wrap"=>1) ) )) ;
 		$pdf->ezText("") ;
-		$pdf->ezText("<u>Dengan hasi sebagai berikut : </u>",$nFont) ;
+		$pdf->ezText("<u>Dengan hasil sebagai berikut : </u>",$nFont) ;
 		$pdf->ezText("") ;
 		$pdf->ezText($dbRow['result'],$nFont) ;
 		$pdf->ezText("") ; 

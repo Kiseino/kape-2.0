@@ -42,7 +42,7 @@
             <header class="header">
                 <a href="http://sedotcode.blogspot.com/" rel="nofollow" class="logo">
                     <!-- Add the class icon to your logo image or logo icon to add the margining -->
-                    <class="site_title"> <img src="images/Bulog-Putih.png" style="max-width: 175px;" ></a>
+                    <class="site_title"> <img src="images/Bulog-Putih.png" style="max-width: 165px;" ></a>
                 </a>
                 <!-- Header Navbar: style can be found in header.less -->
                 <nav class="navbar navbar-static-top" role="navigation" style="text-align:center"> 
