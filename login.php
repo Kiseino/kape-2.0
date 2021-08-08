@@ -5,7 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta charset="utf-8" />
 		<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-		
+		<link href="./images/Bulog-logo.png" rel="icon" type="image/png" />
 		<meta name="description" content="login system">
 		<meta name="keyword" content="">
 		<meta name="author" content="sapeltu-core">
@@ -18,6 +18,7 @@
 					-ms-box-sizing:border-box; 
 					-o-box-sizing:border-box; 
 					-webkit-box-sizing:border-box; 
+					
                      
 			} 
 			a{
@@ -28,10 +29,12 @@
 			          color:#FFFFFF ;     
 			     }
 			body{ 
+				background-image:url(./images/blur-background08.jpg);
 			}
 			
 			#login-wrap{
 			     float:none ; 
+			
 			     margin:5em auto ;
 			     transition:all .5s ease;
 					-moz-transition:all .5s ease;
@@ -129,6 +132,7 @@
 			               font-weight:bold ;
 			               border:0px ;  
 			               box-shadow:none ;   
+						   border-radius: 10px;
 			               
 			          }
 			               #login.panel button:hover{ 
@@ -142,8 +146,8 @@
 		</style>
 	</head> 
 	<body> 
-		<div class="logo"> 
-			<img src="./uploaded/logo.jpg" class="img-responsive" 
+		<div class="logo" style="margin-top:7%"> 
+			<img src="./images/Bulog-putih.png" class="img-responsive" 
 			alt="<?=scSys::GetConfig("sc_front_title")?>" title="<?=scSys::GetConfig("sc_front_title")?>"> 
 		</div>
 
@@ -179,9 +183,6 @@
 					              	<button id="btnSubmit" class="btn btn-default btn-block">Login</button>
 						     </form> 
 					     </div>  
-					</div> 
-					<div class="footer"> 
-					     <?=scSys::GetConfig("sc_front_title")?> | <a href="./pages/log.php" target="_blank">Ver : <?=GetSession("SYS.ver")?></a>
 					</div> 
 				</div>  
 			</div>  
