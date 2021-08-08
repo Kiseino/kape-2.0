@@ -84,7 +84,7 @@
 											class="btn btn-primary btn-grid">Edit</button>' ;
 				$dbRow['cmdEdit']		= html_entity_decode($dbRow['cmdEdit']) ; 
 			}
-			if($cStatus == "0" || $cStatus == "1"){
+			if($cStatus == "0"){
 				$dbRow['cmdDelete']		= '<button type="button" onClick="OBJFORM_NEW.trsppd.Delete(\''.$dbRow['recid'].'\')" 
 										class="btn btn-danger btn-grid">Delete</button>' ;
 				$dbRow['cmdDelete']		= html_entity_decode($dbRow['cmdDelete']) ; 
@@ -159,7 +159,7 @@
 
 	function Deleting($va){
 		global $scDb ; 
-		$scDb->Delete("sppd","code = '{$va['code']}'") ; 
+		$scDb->Delete("sppd","code = '{$va['code']}' AND status = '0'") ; 
 		echo('
 				alert("Data sudah dihapus") ; 
 				OBJFORM_NEW.trsppd.Grid1_ReloadData() ; 
