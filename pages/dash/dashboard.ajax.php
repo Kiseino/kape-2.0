@@ -23,12 +23,6 @@
 				$nJml_selesai	+= intval($dbRow['Jml']) ; 
 			}
 		}
-
-	
-
-		
-	
-
 		echo('
 				$("#nDash_sppd").html("'.number_format($nJml).'") ; 
 				$("#nDash_sppd_new").html("'.number_format($nJml_New).'") ; 
