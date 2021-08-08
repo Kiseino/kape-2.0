@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2017 at 10:24 AM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Generation Time: Aug 08, 2021 at 06:19 PM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 7.3.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -42,16 +43,16 @@ CREATE TABLE `pegawai` (
   `kerja_bulan` int(4) NOT NULL,
   `latihan_jabatan` varchar(100) DEFAULT NULL,
   `latihan_jabatan_tanggal` date DEFAULT '0000-00-00',
-  `latihan_jabatan_jam` int(4) DEFAULT '0',
+  `latihan_jabatan_jam` int(4) DEFAULT 0,
   `pendidikan` varchar(100) NOT NULL,
   `pendidikan_lulus` varchar(4) NOT NULL,
   `pendidikan_ijazah` varchar(100) NOT NULL,
-  `catatan_mutasi` text,
-  `keterangan` text,
+  `catatan_mutasi` text DEFAULT NULL,
+  `keterangan` text DEFAULT NULL,
   `username` varchar(100) DEFAULT NULL,
   `username_update` varchar(100) DEFAULT NULL,
   `datetime_insert` timestamp NULL DEFAULT '0000-00-00 00:00:00',
-  `datetime_update` timestamp NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `datetime_update` timestamp NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE current_timestamp(),
   `status_deleted` enum('0','1') DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -161,7 +162,7 @@ CREATE TABLE `sc_config` (
   `Config_Key` varchar(255) NOT NULL,
   `Config_Table` varchar(50) DEFAULT NULL COMMENT 'jika join for meta value',
   `Config_Id` bigint(20) DEFAULT NULL COMMENT 'for id meta value',
-  `Config_Value` longtext,
+  `Config_Value` longtext DEFAULT NULL,
   `AutoLoad` char(1) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -189,7 +190,7 @@ CREATE TABLE `sc_config_log` (
   `LogTable` varchar(20) NOT NULL,
   `LogWaktu` datetime DEFAULT NULL,
   `LogCrud` varchar(10) NOT NULL,
-  `LogKeterangan` longtext,
+  `LogKeterangan` longtext DEFAULT NULL,
   `LogIp` varchar(30) NOT NULL,
   `LogUserName` varchar(100) NOT NULL,
   `LogSQL` longtext NOT NULL
@@ -311,7 +312,25 @@ INSERT INTO `sc_config_log` (`Id`, `LogTable`, `LogWaktu`, `LogCrud`, `LogKetera
 (109, 'username', '2017-01-28 15:59:11', 'edit', NULL, '::1', 'admin', 'UPDATE username  set FullName = \'lapakcode.net\' , Password = \'772b0c2974cfb52801d48d79a44131e2e73025380005\' , Foto = \'./uploaded/profile/admin.jpg\'  WHERE UserName = \'admin\''),
 (110, 'username', '2017-01-28 16:01:00', 'edit', NULL, '::1', 'admin', 'UPDATE username  set LastLogin = \'2017-01-28 04:00:59\'  WHERE UserName = \'admin\' and Password like \'772b0c2974cfb52801d48d79a44131e2e7302538%\''),
 (111, 'username', '2017-03-21 16:20:19', 'edit', NULL, '::1', 'admin', 'UPDATE username  set LastLogin = \'2017-03-21 04:20:19\'  WHERE UserName = \'admin\' and Password like \'772b0c2974cfb52801d48d79a44131e2e7302538%\''),
-(112, 'username', '2017-03-21 16:21:30', 'edit', NULL, '::1', 'admin', 'UPDATE username  set LastLogin = \'2017-03-21 04:21:30\'  WHERE UserName = \'admin\' and Password like \'772b0c2974cfb52801d48d79a44131e2e7302538%\'');
+(112, 'username', '2017-03-21 16:21:30', 'edit', NULL, '::1', 'admin', 'UPDATE username  set LastLogin = \'2017-03-21 04:21:30\'  WHERE UserName = \'admin\' and Password like \'772b0c2974cfb52801d48d79a44131e2e7302538%\''),
+(113, 'username', '2021-08-08 22:48:34', 'edit', NULL, '127.0.0.1', 'admin', 'UPDATE username  set LastLogin = \'2021-08-08 10:48:34\'  WHERE UserName = \'admin\' and Password like \'772b0c2974cfb52801d48d79a44131e2e7302538%\''),
+(114, 'sppd', '2021-08-08 22:49:02', 'insert', NULL, '127.0.0.1', 'admin', 'INSERT INTO sppd (letter_content,code,nip_pejabat,nip_leader,rate_travel,nip,purpose,transport,place_from,place_to,length_journey,date_go,date_back,government,budget_from,description,username,date) VALUES (\'s\',\'001/ 10A04/MGT/RT.08/08/2021\',\'1958060519860811001\',\'195812241992111001\',\'aaaa\',\'\',\'a\',\'aa\',\'aa\',\'aa\',\'1\',\'2021-08-08\',\'2021-08-08\',\'s\',\'s\',\'s\',\'admin\',\'2021-08-08\')'),
+(115, 'sppd', '2021-08-08 22:49:27', 'edit', NULL, '127.0.0.1', 'admin', 'UPDATE sppd  set letter_content = \'aa\' , code = \'001/ 10A04/MGT/RT.08/08/2021\' , nip_pejabat = \'195808281986011003\' , nip_leader = \'195808281986011003\' , rate_travel = \'aa\' , nip = \'scnull\' , purpose = \'aa\' , transport = \'aa\' , place_from = \'aa\' , place_to = \'aa\' , length_journey = \'1\' , date_go = \'2021-08-08\' , date_back = \'2021-08-08\' , government = \'aa\' , budget_from = \'aa\' , description = \'aa\' , username_update = \'admin\'  WHERE code = \'001/ 10A04/MGT/RT.08/08/2021\''),
+(116, 'sppd', '2021-08-08 22:51:17', 'insert', NULL, '127.0.0.1', 'admin', 'INSERT INTO sppd (letter_content,code,nip_pejabat,nip_leader,rate_travel,nip,purpose,transport,place_from,place_to,length_journey,date_go,date_back,government,budget_from,description,username,date) VALUES (\'aa\',\'001-08-21/sppd/creative\',\'1958060519860811001\',\'195811141986031005\',\'aaa\',\'\',\'aa\',\'aa\',\'aa\',\'aa\',\'1\',\'2021-08-08\',\'2021-08-08\',\'aa\',\'aa\',\'aa\',\'admin\',\'2021-08-08\')'),
+(117, 'sppd', '2021-08-08 22:51:59', 'insert', NULL, '127.0.0.1', 'admin', 'INSERT INTO sppd (letter_content,code,nip_pejabat,nip_leader,rate_travel,nip,purpose,transport,place_from,place_to,length_journey,date_go,date_back,government,budget_from,description,username,date) VALUES (\'o\',\'002-08-21/sppd/creative\',\'1958060519860811001\',\'195812241992111001\',\'aa\',\'\',\'1111\',\'111\',\'11\',\'11\',\'1\',\'2021-08-08\',\'2021-08-08\',\'ooo\',\'o\',\'o\',\'admin\',\'2021-08-08\')'),
+(118, 'sppd', '2021-08-08 22:57:07', 'delete', NULL, '127.0.0.1', 'admin', 'DELETE FROM sppd WHERE code = \'002-08-21/sppd/creative\''),
+(119, 'sppd', '2021-08-08 22:57:27', 'delete', NULL, '127.0.0.1', 'admin', 'DELETE FROM sppd WHERE code = \'001-08-21/sppd/creative\''),
+(120, 'sppd', '2021-08-08 22:57:58', 'insert', NULL, '127.0.0.1', 'admin', 'INSERT INTO sppd (letter_content,code,nip_pejabat,nip_leader,rate_travel,nip,purpose,transport,place_from,place_to,length_journey,date_go,date_back,government,budget_from,description,username,date) VALUES (\'a\',\'003-08-21/sppd/creative\',\'1958060519860811001\',\'195909111983032008\',\'aa\',\'\',\'aa\',\'aa\',\'aa\',\'aa\',\'1\',\'2021-08-08\',\'2021-08-08\',\'a\',\'a\',\'a\',\'admin\',\'2021-08-08\')'),
+(121, 'sppd', '2021-08-08 22:59:49', 'insert', NULL, '127.0.0.1', 'admin', 'INSERT INTO sppd (letter_content,code,nip_pejabat,nip_leader,rate_travel,nip,purpose,transport,place_from,place_to,length_journey,date_go,date_back,government,budget_from,description,username,date) VALUES (\'a\',\'004-08-21/sppd/creative\',\'196001011987091001\',\'196110151987081001\',\'aa\',\'\',\'aa\',\'a\',\'a\',\'a\',\'1\',\'2021-08-08\',\'2021-08-08\',\'aa\',\'a\',\'a\',\'admin\',\'2021-08-08\')'),
+(122, 'sppd', '2021-08-08 23:01:21', 'insert', NULL, '127.0.0.1', 'admin', 'INSERT INTO sppd (letter_content,code,nip_pejabat,nip_leader,rate_travel,nip,purpose,transport,place_from,place_to,length_journey,date_go,date_back,government,budget_from,description,username,date) VALUES (\'a\',\'005-08-21/sppd/creative\',\'196110151987081001\',\'196311101998022002\',\'a\',\'\',\'a\',\'aa\',\'a\',\'a\',\'1\',\'2021-08-08\',\'2021-08-08\',\'aa\',\'a\',\'a\',\'admin\',\'2021-08-08\')'),
+(123, 'sppd', '2021-08-08 23:04:59', 'edit', NULL, '127.0.0.1', 'admin', 'UPDATE sppd  set letter_content = \'a\' , code = \'001/ 10A04/MGT/RT.08/08/2021\' , nip_pejabat = \'195811141986031005\' , nip_leader = \'197410182006011005\' , rate_travel = \'a\' , nip = \'\' , purpose = \'aa\' , transport = \'a\' , place_from = \'aa\' , place_to = \'aa\' , length_journey = \'1\' , date_go = \'2021-08-08\' , date_back = \'2021-08-08\' , government = \'a\' , budget_from = \'a\' , description = \'a\' , username_update = \'admin\'  WHERE code = \'001/ 10A04/MGT/RT.08/08/2021\''),
+(124, 'sppd', '2021-08-08 23:06:25', 'edit', NULL, '127.0.0.1', 'admin', 'UPDATE sppd  set letter_content = \'aa\' , code = \'001/ 10A04/MGT/RT.08/08/2021\' , nip_pejabat = \'1958060519860811001\' , nip_leader = \'195812241992111001\' , rate_travel = \'aa\' , nip = \'\' , purpose = \'aa\' , transport = \'aa\' , place_from = \'aa\' , place_to = \'aa\' , length_journey = \'1\' , date_go = \'2021-08-08\' , date_back = \'2021-08-08\' , government = \'aa\' , budget_from = \'aa\' , description = \'aa\' , username_update = \'admin\'  WHERE code = \'001/ 10A04/MGT/RT.08/08/2021\''),
+(125, 'sppd', '2021-08-08 23:08:54', 'edit', NULL, '127.0.0.1', 'admin', 'UPDATE sppd  set letter_content = \'a\' , code = \'001/ 10A04/MGT/RT.08/08/2021\' , nip_pejabat = \'195808281986011003\' , nip_leader = \'195811141986031005\' , rate_travel = \'a\' , nip = \'\' , purpose = \'a\' , transport = \'a\' , place_from = \'a\' , place_to = \'a\' , length_journey = \'1\' , date_go = \'2021-08-08\' , date_back = \'2021-08-08\' , government = \'a\' , budget_from = \'a\' , description = \'a\' , username_update = \'admin\'  WHERE code = \'001/ 10A04/MGT/RT.08/08/2021\''),
+(126, 'sppd', '2021-08-08 23:10:01', 'edit', NULL, '127.0.0.1', 'admin', 'UPDATE sppd  set letter_content = \'a\' , code = \'001/ 10A04/MGT/RT.08/08/2021\' , nip_pejabat = \'195909111983032008\' , nip_leader = \'196001011987091001\' , rate_travel = \'a\' , nip = \'\' , purpose = \'a\' , transport = \'a\' , place_from = \'a\' , place_to = \'a\' , length_journey = \'1\' , date_go = \'2021-08-08\' , date_back = \'2021-08-08\' , government = \'a\' , budget_from = \'a\' , description = \'a\' , username_update = \'admin\'  WHERE code = \'001/ 10A04/MGT/RT.08/08/2021\''),
+(127, 'sppd', '2021-08-08 23:12:31', 'insert', NULL, '127.0.0.1', 'admin', 'INSERT INTO sppd (letter_content,code,nip_pejabat,nip_leader,rate_travel,nip,purpose,transport,place_from,place_to,length_journey,date_go,date_back,government,budget_from,description,username,date) VALUES (\'a\',\'006-08-21/sppd/creative\',\'195812241992111001\',\'195812241992111001\',\'a\',\'\',\'a\',\'a\',\'a\',\'a\',\'1\',\'2021-08-08\',\'2021-08-08\',\'a\',\'a\',\'a\',\'admin\',\'2021-08-08\')'),
+(128, 'sppd', '2021-08-08 23:14:20', 'insert', NULL, '127.0.0.1', 'admin', 'INSERT INTO sppd (letter_content,code,nip_pejabat,nip_leader,rate_travel,nip,purpose,transport,place_from,place_to,length_journey,date_go,date_back,government,budget_from,description,username,date) VALUES (\'a\',\'001-08-21/sppd/creative\',\'195812291982122003\',\'196901311998031007\',\'aa\',\'\',\'a\',\'a\',\'a\',\'a\',\'1\',\'2021-08-08\',\'2021-08-08\',\'a\',\'a\',\'a\',\'admin\',\'2021-08-08\')'),
+(129, 'sppd', '2021-08-08 23:17:32', 'insert', NULL, '127.0.0.1', 'admin', 'INSERT INTO sppd (letter_content,code,nip_pejabat,nip_leader,rate_travel,nip,purpose,transport,place_from,place_to,length_journey,date_go,date_back,government,budget_from,description,username,date) VALUES (\'a\',\'001/10A04/MGT/RT.08/08/2021\',\'195807171980031014\',\'198401132006041006\',\'a\',\'\',\'aa\',\'aa\',\'aa\',\'aa\',\'1\',\'2021-08-08\',\'2021-08-08\',\'a\',\'a\',\'a\',\'admin\',\'2021-08-08\')'),
+(130, 'sppd', '2021-08-08 23:18:17', 'insert', NULL, '127.0.0.1', 'admin', 'INSERT INTO sppd (letter_content,code,nip_pejabat,nip_leader,rate_travel,nip,purpose,transport,place_from,place_to,length_journey,date_go,date_back,government,budget_from,description,username,date) VALUES (\'aa\',\'002/10A04/MGT/RT.08/08/2021\',\'198401132006041006\',\'195811141986031005\',\'aa\',\'\',\'aaa\',\'aa\',\'aa\',\'aa\',\'1\',\'2021-08-08\',\'2021-08-08\',\'aa\',\'aa\',\'aa\',\'admin\',\'2021-08-08\')');
 
 -- --------------------------------------------------------
 
@@ -320,18 +339,9 @@ INSERT INTO `sc_config_log` (`Id`, `LogTable`, `LogWaktu`, `LogCrud`, `LogKetera
 --
 
 CREATE TABLE `sc_kode` (
-  `Kode` varchar(20) NOT NULL DEFAULT '',
+  `Kode` varchar(255) NOT NULL DEFAULT '',
   `Data` bigint(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `sc_kode`
---
-
-INSERT INTO `sc_kode` (`Kode`, `Data`) VALUES
-('-09-15/sppd/creative', 1),
-('-10-15/sppd/creative', 1),
-('-11-15/sppd/creative', 2);
 
 -- --------------------------------------------------------
 
@@ -344,7 +354,7 @@ CREATE TABLE `sc_master` (
   `Title` varchar(100) DEFAULT NULL,
   `Description` varchar(255) DEFAULT NULL,
   `Stat` varchar(100) DEFAULT NULL,
-  `OtherString` longtext
+  `OtherString` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -398,7 +408,7 @@ CREATE TABLE `sppd` (
   `date_go` date NOT NULL DEFAULT '0000-00-00',
   `date_back` date NOT NULL DEFAULT '0000-00-00',
   `government` varchar(255) NOT NULL,
-  `budget` double(16,2) NOT NULL DEFAULT '0.00',
+  `budget` double(16,2) NOT NULL DEFAULT 0.00,
   `budget_from` varchar(100) NOT NULL,
   `description` text NOT NULL,
   `result_date` date NOT NULL,
@@ -411,18 +421,8 @@ CREATE TABLE `sppd` (
   `username` varchar(100) NOT NULL,
   `username_update` varchar(100) NOT NULL,
   `datetime_insert` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `datetime_update` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
+  `datetime_update` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `sppd`
---
-
-INSERT INTO `sppd` (`id`, `letter_code`, `letter_subject`, `letter_about`, `letter_from`, `letter_content`, `letter_date`, `code`, `date`, `nip_pejabat`, `nip_leader`, `rate_travel`, `nip`, `purpose`, `transport`, `place_from`, `place_to`, `length_journey`, `date_go`, `date_back`, `government`, `budget`, `budget_from`, `description`, `result_date`, `result`, `result_username`, `result_username_update`, `file`, `file_update`, `status`, `username`, `username_update`, `datetime_insert`, `datetime_update`) VALUES
-(1, '', '', '', '', 'Berdasarkan surat', '0000-00-00', '001-11-15/sppd/creative', '2015-11-03', '1958060519860811001', '196001011987091001', 'S', '196702041998031003,195808281986011003', 'Berkunjung ke Kantor Bupati', 'Mobil', 'Singosari', 'Malang', 1, '2015-11-03', '2015-11-04', 'Pemerintahan', 0.00, 'APBD', 'Keterangan Lain', '2015-11-03', 'Pelaporan , Telah selesai .\r\nTerimakasih', 'admin', '', '', '', '2', 'admin', '', '2015-11-03 03:52:20', '2015-11-03 04:08:39'),
-(2, '', '', '', '', 'Dasar Surat', '0000-00-00', '001-10-15/sppd/creative', '2015-10-03', '195812241992111001', '1958060519860811001', 'B', '196005271987081001,196004291990021002', 'Bertemu dengan Presiden', 'Pesawat', 'Malang', 'Jakarta', 10, '2015-10-03', '2015-10-13', 'Instansi', 0.00, 'APBD', 'Keterangan Lain', '0000-00-00', '', '', '', '', '', '1', 'admin', '', '2015-10-03 11:37:48', '2015-10-03 11:37:52'),
-(3, '', '', '', '', 'Dasar SUrat no xxx...', '0000-00-00', '002-11-15/sppd/creative', '2015-11-03', '196005271987081001', '196004291990021002', 'S', '195807171980031014,1958060519860811001', 'Maksud Perjalanan DInas', 'Mobil', 'Malang', 'SIngosari', 1, '2015-11-03', '2015-11-04', 'Tidak tahu', 0.00, 'Rupiah', 'Keterangan', '0000-00-00', '', '', '', '', '', '1', 'admin', '', '2015-11-03 11:40:18', '2015-11-03 12:34:08'),
-(4, '', '', '', '', 'Dasar Surat', '0000-00-00', '001-09-15/sppd/creative', '2015-09-03', '196001011987091001', '195811141986031005', 'S', '196201182007011002', 'Berkunjung ke Batu', 'Sepeda Motor', 'Singosari', 'Batu', 1, '2015-09-03', '2015-09-04', 'Pemda', 0.00, 'APBD', '', '2015-09-03', 'Sudah melaksanakan sambil meminum secangkir gelas kopi panas', 'admin', '', '', '', '2', 'admin', '', '2015-09-03 11:43:41', '2015-09-03 11:44:19');
 
 --
 -- Triggers `sppd`
@@ -456,12 +456,7 @@ CREATE TABLE `username` (
 --
 
 INSERT INTO `username` (`UserName`, `Password`, `FullName`, `Stat`, `LastLogin`, `UserName_Target`, `Foto`, `Email`) VALUES
-('admin', '772b0c2974cfb52801d48d79a44131e2e73025380005', 'sedotcode.blogspot.com', '', '2017-03-21 04:21:30', '', './uploaded/profile/admin.jpg', ''),
-('director', 'f959c4c054adcd234433daaf5ae79b0d806028780005', 'director', '', '0000-00-00 00:00:00', '196012031989031000', '', ''),
-('entry-pegawai', 'dd7492a2e62b62449e99bb9137d5bcb2fc3fe6550002', 'entry-pegawai', '', '0000-00-00 00:00:00', '196701271995022000', '', ''),
-('entry-sppd', '92ce050ad171f6c57e383dcc0ac2b56fff99001e0001', 'entry-sppd', '', '0000-00-00 00:00:00', '196003271986032000', '', ''),
-('sugeng', 'dfc419800afed97e822056a5a70c7372efd915380004', 'sugeng', '', '0000-00-00 00:00:00', '197209172000031000', '', ''),
-('view-sppd', '0cfce60dc180df4d1709b5c34045361dc2c86a110003', 'view-sppd', '', '0000-00-00 00:00:00', '', '', '');
+('admin', '772b0c2974cfb52801d48d79a44131e2e73025380005', 'Admin', '', '2021-08-08 10:48:34', '', './uploaded/profile/admin.jpg', '');
 
 -- --------------------------------------------------------
 
@@ -472,7 +467,7 @@ INSERT INTO `username` (`UserName`, `Password`, `FullName`, `Stat`, `LastLogin`,
 CREATE TABLE `username_level` (
   `Kode` char(4) NOT NULL DEFAULT '',
   `Keterangan` varchar(30) DEFAULT NULL,
-  `Isi` longtext
+  `Isi` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -550,26 +545,32 @@ ALTER TABLE `username_level`
 --
 ALTER TABLE `pegawai`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+
 --
 -- AUTO_INCREMENT for table `sc_config`
 --
 ALTER TABLE `sc_config`
   MODIFY `Id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `sc_config_log`
 --
 ALTER TABLE `sc_config_log`
-  MODIFY `Id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
+  MODIFY `Id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131;
+
 --
 -- AUTO_INCREMENT for table `sc_master`
 --
 ALTER TABLE `sc_master`
   MODIFY `Id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
 --
 -- AUTO_INCREMENT for table `sppd`
 --
 ALTER TABLE `sppd`
-  MODIFY `id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

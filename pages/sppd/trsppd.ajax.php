@@ -84,7 +84,7 @@
 											class="btn btn-primary btn-grid">Edit</button>' ;
 				$dbRow['cmdEdit']		= html_entity_decode($dbRow['cmdEdit']) ; 
 			}
-			if($cStatus == "0"){
+			if($cStatus == "0" || $cStatus == "1"){
 				$dbRow['cmdDelete']		= '<button type="button" onClick="OBJFORM_NEW.trsppd.Delete(\''.$dbRow['recid'].'\')" 
 										class="btn btn-danger btn-grid">Delete</button>' ;
 				$dbRow['cmdDelete']		= html_entity_decode($dbRow['cmdDelete']) ; 
@@ -100,7 +100,7 @@
 		$cUserName	= GetSession("cSession_UserName") ; 
 		$cKode 		= $va['code'] ; 
 		if($cKode 	== ""){
-			$cKey	= "-" . date("m") . "-" . date("y") . "/sppd/creative"; 
+			$cKey	= "/10A04/MGT/RT." . date("d") ."/" . date("m") . "/20" . date("y") . "" ; 
 			$cKode  = scSys::GetLastInt($cKey,true,3) . $cKey ;  
 		}
 		$vaArray	= array("letter_content"=>$va['letter_content'],
@@ -159,7 +159,7 @@
 
 	function Deleting($va){
 		global $scDb ; 
-		$scDb->Delete("sppd","code = '{$va['code']}' AND status = '0'") ; 
+		$scDb->Delete("sppd","code = '{$va['code']}'") ; 
 		echo('
 				alert("Data sudah dihapus") ; 
 				OBJFORM_NEW.trsppd.Grid1_ReloadData() ; 
