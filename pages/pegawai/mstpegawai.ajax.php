@@ -26,7 +26,6 @@
 			$vaGolongan 			= scSys::GetKeterangan("Title,Description","Id = '{$dbRow['golongan']}'","sc_master") ; 
 			$dbRow['golongan']		= $vaGolongan['Description'] . " / " . $vaGolongan['Title'] ; 
 			$dbRow['recid']			= $dbRow['nip'] ; 
-			$dbRow['tanggal_lahir']	= scDate::String2Date($dbRow['tanggal_lahir']) ; 
 			$dbRow['cmdEdit']		= '<button type="button" onClick="OBJFORM_NEW.mstpegawai.Edit(\''.$dbRow['nip'].'\')" 
 										class="btn btn-primary btn-grid">Edit</button>' ;
 			$dbRow['cmdEdit']		= html_entity_decode($dbRow['cmdEdit']) ; 
@@ -43,16 +42,9 @@
 		global $scDb ; 
 		$cNip 		= $va['cNip'] ; 
 		$vaArray 	= array("nip"=>$va['cNip'],"nama"=>$va['cNama'],
-							"alamat"=>$va['cAlamat'],"tanggal_lahir"=>scDate::Date2String($va['dTempat_Tgl']),
-							"tempat_lahir"=>$va['cTempat'],"golongan"=>$va['cGolongan'],
-							"golongan_tanggal"=>scDate::Date2String($va['dGolongan_Tgl']),"jabatan"=>$va['cJabatan'],
-							"jabatan_tanggal"=>scDate::Date2String($va['dJabatan_Tgl']),"kerja_tahun"=>$va['nKerjaTahun'],
-							"kerja_bulan"=>$va['nKerjaBulan'],"latihan_jabatan"=>$va['cJabatan_Lat'],
-							"latihan_jabatan_tanggal"=>scDate::Date2String($va['dJabatan_Lat_Tgl']),
-							"latihan_jabatan_jam"=>$va['nJabatan_Lat'],"pendidikan"=>$va['cPendidikan'],
-							"pendidikan_lulus"=>$va['nThLulus'],"pendidikan_ijazah"=>$va['cIjazah'],
-							"catatan_mutasi"=>$va['cCatatan_Mutasi'],"keterangan"=>$va['cKeterangan'],
-							"no_hp"=>$va['cno_hp']); 
+							
+							"golongan"=>$va['cGolongan'],
+							"jabatan"=>$va['cJabatan']); 
 		$vaInsert 	= array("username"=>GetSession("cSession_UserName")) ; 
 		$vaUpdate 	= array("username_update"=>GetSession("cSession_UserName")) ; 
 		$scDb->Update("pegawai",$vaArray,"nip = '$cNip'",true,$vaInsert,$vaUpdate) ; 
@@ -84,24 +76,9 @@
 						find("#cNip").select2("data",'.json_encode($vaNip).') ;
 						find("#cNip").select2("readonly",true) ;
 						find("#cNama").val("'.$dbRow['nama'].'") ;
-						find("#cAlamat").val("'.$dbRow['alamat'].'") ;
-						find("#cTempat").val("'.$dbRow['tempat_lahir'].'") ;
-						find("#dTempat_Tgl").val("'.scDate::String2Date($dbRow['tanggal_lahir']).'") ;
 						find("#cGolongan").val("'.$dbRow['golongan'].'") ;
-						find("#dGolongan_Tgl").val("'.scDate::String2Date($dbRow['golongan_tanggal']).'") ;
 						find("#cJabatan").val("'.$dbRow['jabatan'].'") ;
-						find("#dJabatan_Tgl").val("'.scDate::String2Date($dbRow['jabatan_tanggal']).'") ;
-						find("#nKerjaTahun").val("'.$dbRow['kerja_tahun'].'") ;
-						find("#nKerjaBulan").val("'.$dbRow['kerja_bulan'].'") ;
-						find("#cJabatan_Lat").val("'.$dbRow['latihan_jabatan'].'") ;
-						find("#dJabatan_Lat_Tgl").val("'.scDate::String2Date($dbRow['latihan_jabatan_tanggal']).'") ;
-						find("#nJabatan_Lat").val("'.$dbRow['latihan_jabatan_jam'].'") ;
-						find("#cPendidikan").val("'.$dbRow['pendidikan'].'") ; 
-						find("#nThLulus").val("'.$dbRow['pendidikan_lulus'].'") ;
-						find("#cIjazah").val("'.$dbRow['pendidikan_ijazah'].'") ;
-						find("#cCatatan_Mutasi").val("'.$dbRow['catatan_mutasi'].'") ;
-						find("#cKeterangan").val("'.$dbRow['keterangan'].'") ;
-						find("#cno_hp").val("'.$dbRow['no_hp'].'") ;
+
 					} 
 					$("#myTabs li:eq(1) a").tab("show") ; 
 				') ; 
