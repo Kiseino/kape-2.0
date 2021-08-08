@@ -6,14 +6,14 @@
 		$nJml 		= 0 ; 
 		$nJml_New 	= 0 ; 
 
-		//Get All Pegawai From Table Pegawai
-		$con = mysql_connect("localhost", "root", "", "sppd");
-		$query    = "SELECT * FROM pegawai";
-		$result = mysql_query($con, $query);
-		$pegawai = mysql_num_rows($result);
-
 		$dbData 	= $scDb->Browse("sppd","COUNT(code) Jml,status","date >= '$dTglAwal' AND date <= '$dTglAkhir'",
 									"","status") ;  
+	
+		$link = mysql_connect("localhost", "root", "");
+		mysql_select_db("sppd", $link);			
+		$result = mysql_query("SELECT * FROM pegawai", $link);
+		$num_rows = mysql_num_rows($result);							
+
 		while($dbRow= $scDb->GetRow($dbData)){
 			$nJml  			+= intval($dbRow['Jml']) ; 
 			if($dbRow['status'] !== "2"){
@@ -23,10 +23,16 @@
 				$nJml_selesai	+= intval($dbRow['Jml']) ; 
 			}
 		}
+
+	
+
+		
+	
+
 		echo('
 				$("#nDash_sppd").html("'.number_format($nJml).'") ; 
 				$("#nDash_sppd_new").html("'.number_format($nJml_New).'") ; 
-				$("#nDash_pegawai").html("'.number_format($pegawai).'") ; 
+				$("#nDash_pegawai").html("'.number_format($num_rows).'") ; 
 				$("#nDash_sppd_selesai").html("'.number_format($nJml_selesai).'") ; 
 			') ;  
 	}
