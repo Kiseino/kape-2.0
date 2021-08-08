@@ -5,6 +5,13 @@
 		$dTglAkhir	= scDate::Date2String($va['dTglAkhir']) ;  
 		$nJml 		= 0 ; 
 		$nJml_New 	= 0 ; 
+		
+		//Get All Pegawai From Table Pegawai
+		$con = mysqli_connect("localhost", "root", "", "sppd");
+		$query    = "SELECT * FROM pegawai";
+		$result = mysqli_query($con, $query);
+		$pegawai = mysqli_num_rows($result);
+
 		$dbData 	= $scDb->Browse("sppd","COUNT(code) Jml,status","date >= '$dTglAwal' AND date <= '$dTglAkhir'",
 									"","status") ;  
 		while($dbRow= $scDb->GetRow($dbData)){
@@ -12,10 +19,15 @@
 			if($dbRow['status'] !== "2"){
 				$nJml_New	+= intval($dbRow['Jml']) ; 
 			}
+			if($dbRow['status'] == "2"){
+				$nJml_selesai	+= intval($dbRow['Jml']) ; 
+			}
 		}
 		echo('
 				$("#nDash_sppd").html("'.number_format($nJml).'") ; 
 				$("#nDash_sppd_new").html("'.number_format($nJml_New).'") ; 
+				$("#nDash_pegawai").html("'.number_format($pegawai).'") ; 
+				$("#nDash_sppd_selesai").html("'.number_format($nJml_selesai).'") ; 
 			') ;  
 	}
 

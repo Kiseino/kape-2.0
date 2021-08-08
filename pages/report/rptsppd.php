@@ -2,14 +2,7 @@
     $cPageSource   = GetLocationFile(__FILE__) ; 
     $vaDate         = scDate::Date2Var(date("Y-m-d")) ; 
 ?>
-<section class="content-header">
-    <h1>
-        Lihat SPPD
-    </h1> 
-    <ol class="breadcrumb">
-        <li><a href=""><i class="fa fa-envelope"></i>Lihat SPPD</a></li> 
-    </ol>
-</section> 
+
 <section class="content">
     <div class="nav-tabs-custom">
         <ul class="nav nav-tabs" id="myTabs">
