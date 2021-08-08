@@ -99,7 +99,7 @@
 		$pdf->ezImage( scSys::GetConfig("sc_header") ,false , 100 , 600) ; 
 		$pdf->ezText("") ; 
 		$pdf->ezText("<u><b>PERINTAH PERJALANAN DINAS</b></u>",$nFont+2,array("justification"=>"center")) ;
-		$pdf->ezText("Nomor : $code",$nFont+2,array("justification"=>"center")) ;
+		$pdf->ezText("NOMOR : $code",$nFont+2,array("justification"=>"center")) ;
 		$pdf->ezText("") ; 
 		$pdf->ezTable($vaTable2,"","",array("showLines"=>0,"showHeadings"=>0,"fontSize"=>$nFont, "cols"=> 
 											array("1"	=>array("width"=>4,"wrap"=>1),
@@ -121,7 +121,7 @@
 		$pdf->ezNewPage() ;
 		$pdf->ezImage( scSys::GetConfig("sc_header") ,false , 100 , 600) ;  
 		$pdf->ezText("<u><b>SURAT PERINTAH TUGAS</b></u>",$nFont+2,array("justification"=>"center")) ;
-		$pdf->ezText("Nomor : $code",$nFont+2,array("justification"=>"center")) ;
+		$pdf->ezText("NOMOR : $code",$nFont+2,array("justification"=>"center")) ;
 		$pdf->ezText("") ; 
 		$pdf->ezTable($vaDasar,"","",array("showLines"=>0,"showHeadings"=>0,"fontSize"=>$nFont, "cols"=> 
 											array("1"	=>array("width"=>20,"wrap"=>1),
