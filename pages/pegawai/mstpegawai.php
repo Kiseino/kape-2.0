@@ -47,8 +47,8 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-sm-6">
-                                <label>Pangkat / Golongan</label>
-                                <input type="text" name="cGolongan" id="cGolongan" placeholder="Pangkat Golongan" 
+                                <label>Golongan</label>
+                                <input type="text" name="cGolongan" id="cGolongan" placeholder="Golongan" 
                                 class="form-control sc-input-required sc-select" maxlength="100" data-sf="LoadPangkat">
                             </div>
                             <div class="col-sm-6">
