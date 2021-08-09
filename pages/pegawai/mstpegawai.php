@@ -19,6 +19,8 @@
             <li class="active"><a href="#tab_1" data-toggle="tab" id="mstpegawai_tab_1">Daftar Pegawai</a></li>
             <li><a href="#tab_2" data-toggle="tab" id="mstpegawai_tab_2">Pegawai</a></li>
             <li class="pull-right">
+                <!-- <button class="btn btn-primary" name="cmdPrint" id="cmdPrint" type="button">Cetak PDF</button> -->
+                <!-- <button class="btn btn-primary" name="cmdPrint_CSV" id="cmdPrint_CSV" type="button">Cetak CSV</button> -->
             </li>
         </ul>
         <div class="tab-content">
@@ -30,8 +32,8 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-sm-4">
-                                <label>NIP  / NOREG</label>
-                                <input type="text" name="cNip" id="cNip" placeholder="NIP / NOREG" 
+                                <label>NIP</label>
+                                <input type="text" name="cNip" id="cNip" placeholder="NIP" 
                                 class="form-control sc-input-required sc-select" maxlength="100" data-sf="LoadNip_Not">
                                 <input type="hidden" name="cPageSource" id="cPageSource" value="<?=$cPageSource?>">
                             </div>
