@@ -25,7 +25,7 @@
 		$vaTable2[] 	= array("1"=>"","2"=>"Nama","3"=>": " .$vaPejabat["nama"]) ;
 		$vaTable2[] 	= array("1"=>"","2"=>"Jabatan","3"=>": " .$vaPejabat['jabatan']) ;
 
-		$vaTable2[] 	= array("1"=>"II.","2"=>"Menerangkan bahwa") ;
+		$vaTable2[] 	= array("1"=>"II.","2"=>"Menerangkan bahwa, Pejabat tersebut dibawah ini") ;
 		$vaTable2[] 	= array("1"=>"","2"=>"Nama / NIP","3"=>": " .$vaLeader['nama']) ;
 		$vaTable2[] 	= array("1"=>"","2"=>"Gol - Jabatan","3"=>": " .$vaLeader_Gol['Title'] . " / " . $vaLeader['jabatan']) ;
 								

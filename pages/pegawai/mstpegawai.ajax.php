@@ -23,8 +23,8 @@
 		$dbData 	= $scDb->Browse("pegawai","*",$cWhere,"","",$cOrder,$cLimit) ; 
 		$dbDataNL 	= $scDb->Browse("pegawai","*",$cWhere) ; 
 		while($dbRow= $scDb->GetRow($dbData)){
-			$vaGolongan 			= scSys::GetKeterangan("Title,Description","Id = '{$dbRow['golongan']}'","sc_master") ; 
-			$dbRow['golongan']		= $vaGolongan['Description'] . " / " . $vaGolongan['Title'] ; 
+			$vaGolongan 			= scSys::GetKeterangan("Title","Id = '{$dbRow['golongan']}'","sc_master") ; 
+			$dbRow['golongan']		= $vaGolongan['Title'] ; 
 			$dbRow['recid']			= $dbRow['nip'] ; 
 			$dbRow['cmdEdit']		= '<button type="button" onClick="OBJFORM_NEW.mstpegawai.Edit(\''.$dbRow['nip'].'\')" 
 										class="btn btn-primary btn-grid">Edit</button>' ;
@@ -69,8 +69,8 @@
 		$dbRow 		= scSys::GetKeterangan("*","nip = '$cNip'","pegawai") ; 
 		if(!empty($dbRow)){
 			$vaNip 		= array("id"=>$dbRow['nip'],"text"=>$dbRow['nip']) ; 
-			$vaGolongan	= scSys::GetKeterangan("Title,Description","Id = '{$dbRow['golongan']}'","sc_master") ;
-			$vaGolongan	= array("id"=>$dbRow['golongan'],"text"=>$vaGolongan['Description'] . " / " . $vaGolongan['Title']) ; 
+			$vaGolongan	= scSys::GetKeterangan("Title","Id = '{$dbRow['golongan']}'","sc_master") ;
+			$vaGolongan	= array("id"=>$dbRow['golongan'],"text"=>$vaGolongan['Title']) ; 
 			echo(' 
 					with(OBJFORM_NEW.mstpegawai.Obj){
 						find("#cNip").select2("data",'.json_encode($vaNip).') ;

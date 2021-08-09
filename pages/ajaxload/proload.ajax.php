@@ -6,7 +6,7 @@
 		$cWhere 		= "Stat = 'gol' AND (Title LIKE '%$cSearch%' OR Description LIKE '%$cSearch%')" ; 
 		$dbData 		= $scDb->Browse("sc_master","*",$cWhere) ; 
 		while($dbRow 	= $scDb->GetRow($dbData)){
-			$vaArray[]	= array("id"=>$dbRow['Id'],"text"=>$dbRow['Description'] . " / " . $dbRow['Title'] ) ; 
+			$vaArray[]	= array("id"=>$dbRow['Id'],"text"=>$dbRow['Title']) ; 
 		} 
 		if(empty($vaArray)) $vaArray[]	= array("id"=>"scnull","text"=>"Tidak ditemukan") ;
 		echo(json_encode($vaArray)) ; 
