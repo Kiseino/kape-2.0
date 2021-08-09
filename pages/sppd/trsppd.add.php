@@ -34,10 +34,10 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-sm-5">
-                            <label>Pejabat yang memberi perintah</label>
+                            <label>Yang bertanda tangan dibawah ini</label>
                             <input type="text" name="nip_pejabat" id="nip_pejabat" 
                             class="form-control sc-input-required sc-select" 
-                            placeholder="Pejabat yang memberi perintah" data-sf="LoadNip">
+                            placeholder="Yang bertanda tangan dibawah ini" data-sf="LoadNip">
                             <input type="hidden" name="cPageSource" id="cPageSource" 
                             value="<?=$cPageSource?>">
                             <input type="hidden" name="code" id="code" >
@@ -45,17 +45,17 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Maksud Perjalanan Dinas</label>
+                    <label>Akan Melaksanakan Tugas</label>
                     <input type="text" name="purpose" id="purpose"
-                    class="form-control sc-input-required" placeholder="Maksud Perjalanan Dinas">
+                    class="form-control sc-input-required" placeholder="Akan Melaksanakan Tugas">
                 </div>
                 <div class="form-group">
                     <div class="row">
                         <div class="col-sm-6">
-                            <label>Alat Angkut yang dipergunakan</label>
+                            <label>Sarana Angkut yang dipergunakan</label>
                             <input type="text" name="transport" id="transport" 
                             class="form-control sc-input-required" 
-                            placeholder="Alat Angkut yang dipergunakan">
+                            placeholder="Sarana Angkut yang dipergunakan">
                         </div>
                         <div class="col-sm-3">
                             <label>Tempat Berangkat</label>
@@ -74,10 +74,10 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-sm-2">
-                            <label>Lama Perjalanan (Hari)</label>
+                            <label>Lama Dinas (Hari)</label>
                             <input type="text" name="length_journey" id="length_journey" 
                             class="form-control sc-input-required sc-number" value="1" 
-                            placeholder="Lama Perjalanan">
+                            placeholder="Lama Dinas">
                         </div>
                         <div class="col-sm-2">
                             <label>Tgl Berangkat</label>
@@ -96,15 +96,10 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-sm-6">
-                            <label>Pegawai yang diperintah</label>
+                            <label>Pegawai yang ditugaskan</label>
                             <input type="text" name="nip_leader" id="nip_leader" 
                             class="form-control sc-input-required sc-select" 
-                            placeholder="Pegawai yang diperintah" data-sf="LoadNip">
-                        </div>
-                        <div class="col-sm-2">
-                            <label>Tingkat Perjalanan</label>
-                            <input type="text" name="rate_travel" id="rate_travel"
-                            class="form-control sc-input-required" placeholder="Tingkat Perjalanan">
+                            placeholder="Pegawai yang ditugaskan" data-sf="LoadNip">
                         </div>
                     </div>
                 </div>
@@ -136,11 +131,6 @@
                     class="form-control" placeholder="Keterangn Lain">
                 </div>
                 <hr />
-                <div class="form-group">
-                    <label>Dasar Surat</label>
-                    <input type="text" name="letter_content" id="letter_content" 
-                    class="form-control  sc-input-required" placeholder="Dasar Surat">
-                </div>
                 <button type="button" class="btn btn-primary" id="cmdSave" name="cmdSave">Simpan</button>
             </div>
         </div><!-- /.tab-content -->

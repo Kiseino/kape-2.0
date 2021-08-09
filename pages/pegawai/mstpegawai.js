@@ -24,13 +24,13 @@ OBJFORM_NEW.mstpegawai.Grid1_Load	= function(){
         },
         multiSearch: false, 
         searches: [
-        	{ field: 'nip', caption: 'NIP',type:'text'}, 
+        	{ field: 'nip', caption: 'NIP / NOREG',type:'text'}, 
             { field: 'nama', caption: 'Nama',type:'text'},
             { field: 'golongan', caption: 'Pangkat / Golongan',type:'text'}, 
             { field: 'jabatan', caption: 'Jabatan',type:'text'}
         ],
         columns: [   
-            { field: 'nip', caption: 'Nip', size: '150px', sortable: true },  
+            { field: 'nip', caption: 'Nip / Noreg', size: '150px', sortable: true },  
             { field: 'nama', caption: 'Nama', size: '250px', sortable: true},
             { field: 'golongan', caption: 'Golongan', size: '150px', sortable: true },
             { field: 'jabatan', caption: 'Jabatan', size: '150px', sortable: true },

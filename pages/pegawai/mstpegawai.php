@@ -32,8 +32,8 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-sm-4">
-                                <label>NIP</label>
-                                <input type="text" name="cNip" id="cNip" placeholder="NIP" 
+                                <label>NIP / NOREG</label>
+                                <input type="text" name="cNip" id="cNip" placeholder="NIP / NOREG" 
                                 class="form-control sc-input-required sc-select" maxlength="100" data-sf="LoadNip_Not">
                                 <input type="hidden" name="cPageSource" id="cPageSource" value="<?=$cPageSource?>">
                             </div>
