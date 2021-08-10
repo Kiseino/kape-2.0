@@ -108,8 +108,8 @@
 							"nip_leader"=>$va['nip_leader'],"rate_travel"=>$va['rate_travel'],"nip"=>$va['nip'],
 							"purpose"=>$va['purpose'],"transport"=>$va['transport'],"place_from"=>$va['place_from'],
 							"place_to"=>$va['place_to'],"length_journey"=>$va['length_journey'],"date_go"=>scDate::Date2String($va['date_go']),
-							"date_back"=>scDate::Date2String($va['date_back']),"government"=>$va['government'],
-							"budget_from"=>$va['budget_from'],"description"=>$va['description']) ; 
+							"date_back"=>scDate::Date2String($va['date_back']),"description"=>$va['description'],
+							"inputjenis"=>$va) ; 
 		$vaInsert 	= array("username"=>$cUserName,"date"=>date("Y-m-d")) ;  
 		$vaUpdate 	= array("username_update"=>$cUserName) ; 
 		$scDb->Update("sppd",$vaArray,"code = '$cKode'",true,$vaInsert,$vaUpdate) ; 

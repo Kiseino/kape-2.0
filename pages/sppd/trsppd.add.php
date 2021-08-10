@@ -42,6 +42,14 @@
                             value="<?=$cPageSource?>">
                             <input type="hidden" name="code" id="code" >
                         </div>
+                        <div class="col-md-3">
+                            <label for="inputjenis">Jenis Perjalanan</label>
+                            <select class="form-control sc-input-required" id="inputjenis" name="inputjenis">
+                                <option selected>Choose...</option>
+                                <option>Dalam Kota</option>
+                                <option>Luar Kota</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -111,17 +119,29 @@
                 </div>
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-sm-4">
-                            <label>Instansi (Pembebanan Anggaran)</label>
-                            <input type="text" name="government" id="government" 
-                            class="form-control sc-input-required" 
-                            placeholder="Instansi (Pembebanan Anggaran)">
+                        <div class="col-sm-3">
+                            <label>Biaya Transportasi&nbsp;&nbsp;<small style="opacity:.7"><i>(optional)</i></small></label>
+                            <input type="text" name="b_transport" id="b_transport" 
+                            class="form-control" 
+                            placeholder="Biaya Transportasi">
                         </div>
-                        <div class="col-sm-2">
-                            <label>Mata Aggaran</label>
-                            <input type="text" name="budget_from" id="budget_from" 
-                            class="form-control sc-input-required" 
-                            placeholder="Mata Aggaran">
+                        <div class="col-sm-3">
+                            <label>Tol&nbsp;&nbsp;<small style="opacity:.7"><i>(optional)</i></small></label>
+                            <input type="text" name="b_tol" id="b_tol" 
+                            class="form-control" 
+                            placeholder="Tol">
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Sewa Mobil&nbsp;&nbsp;<small style="opacity:.7"><i>(optional)</i></small></label>
+                            <input type="text" name="b_sewamobil" id="b_sewamobil" 
+                            class="form-control" 
+                            placeholder="Sewa Mobil">
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Biaya Penginapan&nbsp;&nbsp;<small style="opacity:.7"><i>(optional)</i></small></label>
+                            <input type="text" name="b_penginapan" id="b_penginapan" 
+                            class="form-control" 
+                            placeholder="Biaya Penginapan">
                         </div>
                     </div>
                 </div>
