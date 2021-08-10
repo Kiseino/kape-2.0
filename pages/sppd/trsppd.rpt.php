@@ -26,8 +26,8 @@
 		$vaTable2[] 	= array("1"=>"","2"=>"Jabatan","3"=>": " .$vaPejabat['jabatan']) ;
 
 		$vaTable2[] 	= array("1"=>"II.","2"=>"Menerangkan bahwa") ;
-		$vaTable2[] 	= array("1"=>"","2"=>"Nama / NIP","3"=>": " .$vaLeader['nama']) ;
-		$vaTable2[] 	= array("1"=>"","2"=>"Gol - Jabatan","3"=>": " .$vaLeader_Gol['Title'] . " / " . $vaLeader['jabatan']) ;
+		$vaTable2[] 	= array("1"=>"","2"=>"Nama / NIP","3"=>": " .$vaLeader['nama'] . " / " . $vaLeader['nip']) ;
+		$vaTable2[] 	= array("1"=>"","2"=>"Gol - Jabatan","3"=>": " .$vaLeader_Gol['Title'] . " - " . $vaLeader['jabatan']) ;
 								
 		$vaTable2[] 	= array("1"=>"III.","2"=>"Akan melaksanakan tugas","3"=>": " .$dbRow['purpose']) ;
 		$vaTable2[] 	= array("1"=>"IV.","2"=>"a. Tempat Berangkat","3"=>": " .$dbRow['place_from']) ;
@@ -87,7 +87,7 @@
 		$pdf->ezText("<u><b>SURAT KETERANGAN PERJALANAN DINAS</b></u>",$nFont+2,array("justification"=>"center")) ;
 		$pdf->ezText("Nomor : $code",$nFont+2,array("justification"=>"center")) ;
 		$pdf->ezText("") ; 
-		$pdf->ezTable($vaTable2,"","",array("showLines"=>0,"showHeadings"=>0,"fontSize"=>$nFont, "cols"=> 
+		$pdf->ezTable($vaTable2,"","",array("showLines"=>1,"showHeadings"=>0,"fontSize"=>$nFont, "cols"=> 
 											array("1"	=>array("width"=>4,"wrap"=>1),
 												  "2"	=>array("width"=>40,"wrap"=>1),
 												  "3"	=>array("width"=>57,"wrap"=>1) ) )) ;
