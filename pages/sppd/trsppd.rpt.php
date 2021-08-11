@@ -43,7 +43,7 @@
 		$vaTable7	 	= array() ; 
 		$vaTable7[] 	= array("1"=>" VI","2"=>"a. Lama Dinas","3"=>" " .$dbRow['length_journey'] . 
 								" (" . scSys::Terbilang($dbRow['length_journey']) .") hari") ;
-		$vaTable7[] 	= array("1"=>"","2"=>"b. Tanggal Keerangkatan","3"=>" " .scDate::String2Date($dbRow['date_go']) ) ;
+		$vaTable7[] 	= array("1"=>"","2"=>"b. Tanggal Keberangkatan","3"=>" " .scDate::String2Date($dbRow['date_go']) ) ;
 		$vaTable7[] 	= array("1"=>"","2"=>"b. Tanggal Kepulangan","3"=>" " .scDate::String2Date($dbRow['date_back']) ) ;
 
 		$vaTable8	 	= array() ; 
