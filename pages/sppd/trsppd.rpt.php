@@ -52,11 +52,11 @@
 		$vaTable9 		= array() ; 
 		$nRow 			= 1 ; 
 		$ncab 			= "Kancab Bandung" ; 
-		$vaTable9[] 	= array("1"=>" VII","2"=>"Pengikut","3"=>"","4"=>"","5"=>"","6"=>"","7"=>"") ;
+		$vaTable9[] 	= array("1"=>"VII","2"=>"Pengikut","3"=>"","4"=>"","5"=>"","6"=>"","7"=>"") ;
 		$vaTable9[] 	= array("1"=>"","2"=>"      No","3"=>"                Nama","4"=>"                 NIP","5"=>"  Gol","6"=>"      Jabatan","7"=>"       Unit Kerja") ;
 		foreach ($vaPengikut as $key => $vaData) {
 			$vaPengikut_Gol	= scSys::GetKeterangan("Title,Description","Id = '{$vaData['golongan']}'","sc_master") ;  ; 
-			$vaTable9[] 	= array("1"=>"","2"=>"       ".$nRow++."",""=>$vaData['nama'],"4"=>$vaData['nip'],"5"=>$vaPengikut_Gol['Title'],"6"=>$vaData['jabatan'],"7"=>$ncab) ;
+			$vaTable9[] 	= array("1"=>"","2"=>"       ".$nRow++."","3"=>$vaData['nama'],"4"=>$vaData['nip'],"5"=>" ".$vaPengikut_Gol['Title']."","6"=>$vaData['jabatan'],"7"=>$ncab) ;
 		}
 
 		$vaDate 		= scDate::Date2Var($dbRow['date']) ;  
