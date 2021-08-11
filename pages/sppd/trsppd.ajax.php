@@ -89,6 +89,11 @@
 										class="btn btn-danger btn-grid">Delete</button>' ;
 				$dbRow['cmdDelete']		= html_entity_decode($dbRow['cmdDelete']) ; 
 			}
+			if($cStatus <> "2"){
+				$dbRow['cmdDone']		= '<button type="button" onClick="OBJFORM_NEW.trsppd.Done(\''.$dbRow['recid'].'\')" 
+										class="btn btn-success btn-grid">Done</button>' ;
+				$dbRow['cmdDone']		= html_entity_decode($dbRow['cmdDone']) ; 
+			}
 			$vaReturn[]				= $dbRow ; 
 		}
 		$vaReturn 	= array("total"=>$scDb->Rows($dbDataNL),"records"=>$vaReturn) ;
@@ -168,6 +173,18 @@
 		$scDb->Delete("sppd","code = '{$va['code']}'") ; 
 		echo('
 				alert("Data sudah dihapus") ; 
+				OBJFORM_NEW.trsppd.Grid1_ReloadData() ; 
+			') ; 
+	}
+
+
+	function Done($va){
+		global $scDb ; 
+		$vaArray2	= array("status"=>"2") ; 
+		$scDb->Update("sppd",$vaArray2,"code = '{$va['code']}'") ; 
+
+		echo('	
+				alert("Data Telah Selesai") ; 
 				OBJFORM_NEW.trsppd.Grid1_ReloadData() ; 
 			') ; 
 	}

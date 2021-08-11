@@ -109,7 +109,7 @@ OBJFORM_NEW.trsppd.Grid1_Load   = function(){
             { field: 'code', caption: 'No SPPD', size: '150px', sortable: true,attr:'align=center' },  
             { field: 'date', caption: 'Tanggal', size: '80px', sortable: true,attr:'align=center'},
             { field: 'status', caption: 'Status', size: '100px', sortable: true,attr:'align=center'},
-            { field: 'purpose', caption: 'Maksud', size: '250px', sortable: true},
+            { field: 'purpose', caption: 'Maksud', size: '200px', sortable: true},
             { field: 'nip_pejabat', caption: 'Pemberi Perintah', size: '200px', sortable: true},
             { field: 'nip_leader', caption: 'yang diperintah', size: '200px', sortable: true},
             { field: 'place_to', caption: 'Tujuan', size: '150px', sortable: true },
@@ -117,6 +117,7 @@ OBJFORM_NEW.trsppd.Grid1_Load   = function(){
             { field: 'date_back', caption: 'Kembali', size: '80px', sortable: true,attr:'align=center'},
             { field: 'username', caption: 'User Input', size: '100px', sortable: true,attr:'align=center'},
             { field: 'cmdEdit', caption: '', size: '80px', sortable: false,attr:'align=center' },
+            { field: 'cmdDone', caption: '', size: '80px', sortable: false,attr:'align=center' },
             { field: 'cmdDelete', caption: '', size: '80px', sortable: false,attr:'align=center' }
         ]
     });   
@@ -147,6 +148,12 @@ OBJFORM_NEW.trsppd.Edit             = function(code){
 OBJFORM_NEW.trsppd.Delete           = function(code){
     if(confirm("Data dihapus ? ")){
         scAjax(OBJFORM_NEW.trsppd.Url_A,'Deleting','code=' + code) ; 
+    }
+}
+
+OBJFORM_NEW.trsppd.Done           = function(code){
+    if(confirm("Data Telah selesai ? ")){
+        scAjax(OBJFORM_NEW.trsppd.Url_A,'Done','code=' + code) ; 
     }
 }
 
