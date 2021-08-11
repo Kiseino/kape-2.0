@@ -109,7 +109,7 @@
 							"purpose"=>$va['purpose'],"transport"=>$va['transport'],"place_from"=>$va['place_from'],
 							"place_to"=>$va['place_to'],"length_journey"=>$va['length_journey'],"date_go"=>scDate::Date2String($va['date_go']),
 							"date_back"=>scDate::Date2String($va['date_back']),"description"=>$va['description'],
-							"inputjenis"=>$va) ; 
+							"inputjenis"=>$va['inputjenis'],"b_transport"=>$va['b_transport'],"b_tol"=>$va['b_tol'],"b_sewamobil"=>$va['b_sewamobil'],"b_penginapan"=>$va['b_penginapan']) ; 
 		$vaInsert 	= array("username"=>$cUserName,"date"=>date("Y-m-d")) ;  
 		$vaUpdate 	= array("username_update"=>$cUserName) ; 
 		$scDb->Update("sppd",$vaArray,"code = '$cKode'",true,$vaInsert,$vaUpdate) ; 
@@ -152,9 +152,15 @@
 						find("#government").val("'.$dbRow['government'].'") ; 
 						find("#budget_from").val("'.$dbRow['budget_from'].'") ;
 						find("#description").val("'.$dbRow['description'].'") ;
+						find("#inputjenis").val("'.$dbRow['inputjenis'].'") ;
+						find("#b_transport").val("'.$dbRow['b_transport'].'") ;
+						find("#b_tol").val("'.$dbRow['b_tol'].'") ;
+						find("#b_sewamobil").val("'.$dbRow['b_sewamobil'].'") ;
+						find("#b_penginapan").val("'.$dbRow['b_penginapan'].'") ;
 					}
 				') ; 
 		}
+	
 	}
 
 	function Deleting($va){

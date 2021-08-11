@@ -42,7 +42,16 @@
                             value="<?=$cPageSource?>">
                             <input type="hidden" name="code" id="code" >
                         </div>
-                        <div class="col-md-3">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                <div class="col-md-9">
+                    <label>Akan Melaksanakan Tugas</label>
+                    <input type="text" name="purpose" id="purpose"
+                    class="form-control sc-input-required" placeholder="Akan Melaksanakan Tugas">
+                </div>
+                <div class="col-md-3">
                             <label for="inputjenis">Jenis Perjalanan</label>
                             <select class="form-control sc-input-required" id="inputjenis" name="inputjenis">
                                 <option selected>Choose...</option>
@@ -50,13 +59,8 @@
                                 <option>Luar Kota</option>
                             </select>
                         </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Akan Melaksanakan Tugas</label>
-                    <input type="text" name="purpose" id="purpose"
-                    class="form-control sc-input-required" placeholder="Akan Melaksanakan Tugas">
-                </div>
+                        </div>
+                        </div>
                 <div class="form-group">
                     <div class="row">
                         <div class="col-sm-6">

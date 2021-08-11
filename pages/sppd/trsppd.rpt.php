@@ -22,22 +22,32 @@
 
 		$vaTable2	 	= array() ;  
 		$vaTable2[] 	= array("1"=>"I.","2"=>"Yang bertanda tangan dibawah ini","3"=>"" ) ;
-		$vaTable2[] 	= array("1"=>"","2"=>"Nama","3"=>": " .$vaPejabat["nama"]) ;
-		$vaTable2[] 	= array("1"=>"","2"=>"Jabatan","3"=>": " .$vaPejabat['jabatan']) ;
+		$vaTable2[] 	= array("1"=>"","2"=>"Nama","3"=>" " .$vaPejabat["nama"]) ;
+		$vaTable2[] 	= array("1"=>"","2"=>"Jabatan","3"=>" " .$vaPejabat['jabatan']) ;
 
-		$vaTable2[] 	= array("1"=>"II.","2"=>"Menerangkan bahwa") ;
-		$vaTable2[] 	= array("1"=>"","2"=>"Nama / NIP","3"=>": " .$vaLeader['nama'] . " / " . $vaLeader['nip']) ;
-		$vaTable2[] 	= array("1"=>"","2"=>"Gol - Jabatan","3"=>": " .$vaLeader_Gol['Title'] . " - " . $vaLeader['jabatan']) ;
-								
-		$vaTable2[] 	= array("1"=>"III.","2"=>"Akan melaksanakan tugas","3"=>": " .$dbRow['purpose']) ;
-		$vaTable2[] 	= array("1"=>"IV.","2"=>"a. Tempat Berangkat","3"=>": " .$dbRow['place_from']) ;
-		$vaTable2[] 	= array("1"=>"","2"=>"b. Tempat Tujuan","3"=>": " .$dbRow['place_to']) ;
-		$vaTable2[] 	= array("1"=>"V.","2"=>"Alat yang dipergunakan","3"=>": " .$dbRow['transport']) ;
-		$vaTable2[] 	= array("1"=>"VI.","2"=>"a. Lama Dinas","3"=>": " .$dbRow['length_journey'] . 
+		$vaTable3	 	= array() ; 
+		$vaTable3[] 	= array("1"=>"II.","2"=>"Menerangkan bahwa","3"=>"") ;
+		$vaTable3[] 	= array("1"=>"","2"=>"Nama / NIP","3"=>" " .$vaLeader['nama'] . " / " . $vaLeader['nip']) ;
+		$vaTable3[] 	= array("1"=>"","2"=>"Gol - Jabatan","3"=>" " .$vaLeader_Gol['Title'] . " - " . $vaLeader['jabatan']) ;
+	
+		$vaTable4	 	= array() ; 
+		$vaTable4[] 	= array("1"=>"III.","2"=>"Akan melaksanakan tugas","3"=>" " .$dbRow['purpose']) ;
+
+		$vaTable5	 	= array() ; 
+		$vaTable5[] 	= array("1"=>"IV.","2"=>"a. Tempat Berangkat","3"=>" " .$dbRow['place_from']) ;
+		$vaTable5[] 	= array("1"=>"","2"=>"b. Tempat Tujuan","3"=>" " .$dbRow['place_to']) ;
+
+		$vaTable6	 	= array() ; 
+		$vaTable6[] 	= array("1"=>"V.","2"=>"Alat yang dipergunakan","3"=>" " .$dbRow['transport']) ;
+
+		$vaTable7	 	= array() ; 
+		$vaTable7[] 	= array("1"=>"VI.","2"=>"a. Lama Dinas","3"=>" " .$dbRow['length_journey'] . 
 								" (" . scSys::Terbilang($dbRow['length_journey']) .") hari") ;
-		$vaTable2[] 	= array("1"=>"","2"=>"b. Tanggal Keerangkatan","3"=>": " .scDate::String2Date($dbRow['date_go']) ) ;
-		$vaTable2[] 	= array("1"=>"","2"=>"b. Tanggal Kepulangan","3"=>": " .scDate::String2Date($dbRow['date_back']) ) ;
-		$vaTable2[] 	= array("1"=>"VII.","2"=>"Keterangan","3"=>": " .$dbRow['description'] ) ;
+		$vaTable7[] 	= array("1"=>"","2"=>"b. Tanggal Keerangkatan","3"=>" " .scDate::String2Date($dbRow['date_go']) ) ;
+		$vaTable7[] 	= array("1"=>"","2"=>"b. Tanggal Kepulangan","3"=>" " .scDate::String2Date($dbRow['date_back']) ) ;
+
+		$vaTable8	 	= array() ; 
+		$vaTable8[] 	= array("1"=>"VII.","2"=>"Keterangan","3"=>" " .$dbRow['description'] ) ;
 
 		$vaDate 		= scDate::Date2Var($dbRow['date']) ;  
 		$vaTanggal		= array() ; 
@@ -88,6 +98,30 @@
 		$pdf->ezText("Nomor : $code",$nFont+2,array("justification"=>"center")) ;
 		$pdf->ezText("") ; 
 		$pdf->ezTable($vaTable2,"","",array("showLines"=>1,"showHeadings"=>0,"fontSize"=>$nFont, "cols"=> 
+											array("1"	=>array("width"=>4,"wrap"=>1),
+												  "2"	=>array("width"=>40,"wrap"=>1),
+												  "3"	=>array("width"=>57,"wrap"=>1) ) )) ;
+		$pdf->ezTable($vaTable3,"","",array("showLines"=>1,"showHeadings"=>0,"fontSize"=>$nFont, "cols"=> 
+											array("1"	=>array("width"=>4,"wrap"=>1),
+												  "2"	=>array("width"=>40,"wrap"=>1),
+												  "3"	=>array("width"=>57,"wrap"=>1) ) )) ;
+		$pdf->ezTable($vaTable4,"","",array("showLines"=>1,"showHeadings"=>0,"fontSize"=>$nFont, "cols"=> 
+											array("1"	=>array("width"=>4,"wrap"=>1),
+												  "2"	=>array("width"=>40,"wrap"=>1),
+												  "3"	=>array("width"=>57,"wrap"=>1) ) )) ;
+		$pdf->ezTable($vaTable5,"","",array("showLines"=>1,"showHeadings"=>0,"fontSize"=>$nFont, "cols"=> 
+											array("1"	=>array("width"=>4,"wrap"=>1),
+												  "2"	=>array("width"=>40,"wrap"=>1),
+												  "3"	=>array("width"=>57,"wrap"=>1) ) )) ;
+		$pdf->ezTable($vaTable6,"","",array("showLines"=>1,"showHeadings"=>0,"fontSize"=>$nFont, "cols"=> 
+											array("1"	=>array("width"=>4,"wrap"=>1),
+												  "2"	=>array("width"=>40,"wrap"=>1),
+												  "3"	=>array("width"=>57,"wrap"=>1) ) )) ;
+		$pdf->ezTable($vaTable7,"","",array("showLines"=>1,"showHeadings"=>0,"fontSize"=>$nFont, "cols"=> 
+											array("1"	=>array("width"=>4,"wrap"=>1),
+												  "2"	=>array("width"=>40,"wrap"=>1),
+												  "3"	=>array("width"=>57,"wrap"=>1) ) )) ;
+		$pdf->ezTable($vaTable8,"","",array("showLines"=>1,"showHeadings"=>0,"fontSize"=>$nFont, "cols"=> 
 											array("1"	=>array("width"=>4,"wrap"=>1),
 												  "2"	=>array("width"=>40,"wrap"=>1),
 												  "3"	=>array("width"=>57,"wrap"=>1) ) )) ;
