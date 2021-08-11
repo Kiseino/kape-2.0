@@ -48,7 +48,7 @@
                 <div class="icon">
                   <i class="ion ion-ios-cloud-download-outline"></i>
                 </div>
-                <a href="#" class="small-box-footer" onclick="ChangePage('#report/rptsppd')">
+                <a href="#" class="small-box-footer" onclick="ChangePage('#sppd/trsppd')">
                     More info <i class="fa fa-arrow-circle-right"></i>
                 </a>
             </div>
@@ -62,7 +62,7 @@
                 <div class="icon">
                   <i class="ion ion-ios-email-outline"></i>
                 </div>
-                <a href="#" class="small-box-footer" onclick="ChangePage('#report/rptsppd')">
+                <a href="#" class="small-box-footer" onclick="ChangePage('#sppd/trsppd')">
                     More info <i class="fa fa-arrow-circle-right"></i>
                 </a>
             </div>
@@ -76,7 +76,7 @@
                 <div class="icon">
                   <i class="ion ion-ios-email-outline"></i>
                 </div>
-                <a href="#" class="small-box-footer" onclick="ChangePage('#report/rptsppd')">
+                <a href="#" class="small-box-footer" onclick="ChangePage('#sppd/trsppd')">
                     More info <i class="fa fa-arrow-circle-right"></i>
                 </a>
             </div>
@@ -84,7 +84,7 @@
         
     </div>
     <?php
-        include("./pages/report/rptsppd.php")
+        include("./pages/sppd/trsppd.php")
         ?>
 </section><!-- /.content -->
 

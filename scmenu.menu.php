@@ -25,7 +25,6 @@
 ["Pegawai","pegawai/mstpegawai","fa fa-users"]
 ["SPPD","sppd/trsppd","fa fa-envelope"]
 ["Pelaporan SPPD","sppd/trsppd_laporan","fa fa-send"]
-["Lihat SPPD","report/rptsppd","fa fa-file"]
 ["Administrator","","fa fa-gears","objA"]
 	["User","","fa fa-user","objA_User"] 
 		["User Level","sys/userlevel",""]

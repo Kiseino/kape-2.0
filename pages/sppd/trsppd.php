@@ -6,9 +6,6 @@
     <h1>
         SPPD
     </h1> 
-    <ol class="breadcrumb">
-        <li><a href=""><i class="fa fa-envelope"></i>SPPD</a></li> 
-    </ol>
 </section> 
 <section class="content">
     <div class="nav-tabs-custom">
