@@ -49,10 +49,12 @@
 		$vaTable8	 	= array() ; 
 		$vaTable8[] 	= array("1"=>"VIII","2"=>"Keterangan","3"=>" " .$dbRow['description'] ) ;
 
+		$vaTable10	 	= array() ; 
+		$vaTable10[] 	= array("1"=>"VII","2"=>"Pengikut") ;
+
 		$vaTable9 		= array() ; 
 		$nRow 			= 1 ; 
 		$ncab 			= "Kancab Bandung" ; 
-		$vaTable9[] 	= array("1"=>"VII","2"=>"Pengikut","3"=>"","4"=>"","5"=>"","6"=>"","7"=>"") ;
 		$vaTable9[] 	= array("1"=>"","2"=>"No","3"=>"Nama","4"=>"NIP","5"=>"Gol","6"=>"Jabatan","7"=>"Unit Kerja") ;
 		foreach ($vaPengikut as $key => $vaData) {
 			$vaPengikut_Gol	= scSys::GetKeterangan("Title,Description","Id = '{$vaData['golongan']}'","sc_master") ;  ; 
@@ -114,6 +116,9 @@
 											array("1"	=>array("width"=>4,"wrap"=>1),
 												  "2"	=>array("width"=>36,"wrap"=>1),
 												  "3"	=>array("width"=>61,"wrap"=>1) ) )) ;
+		$pdf->ezTable($vaTable10,"","",array("showLines"=>1,"showHeadings"=>0,"fontSize"=>$nFont, "cols"=> 
+											array("1"	=>array("width"=>4,"wrap"=>1),
+												  "2"	=>array("width"=>97,"wrap"=>1,"justification"=>"left") ) )) ;
 		$pdf->ezTable($vaTable9,"","",array("showLines"=>2,"showHeadings"=>0,"fontSize"=>$nFont, "cols"=> 
 											array("1"	=>array("width"=>4,"wrap"=>1,"justification"=>"center"),
 												  "2"	=>array("width"=>10,"wrap"=>1,"justification"=>"center"),
