@@ -31,7 +31,7 @@
 		$vaTable3[] 	= array("1"=>"","2"=>"Gol - Jabatan","3"=>" " .$vaLeader_Gol['Title'] . " - " . $vaLeader['jabatan']) ;
 	
 		$vaTable4	 	= array() ; 
-		$vaTable4[] 	= array("1"=>" III","2"=>"Akan melaksanakan tugas","3"=>" " .$dbRow['purpose']) ;
+		$vaTable4[] 	= array("1"=>" III","2"=>"Akan melaksanakan tugas","3"=>" ".$dbRow['purpose']) ;
 
 		$vaTable5	 	= array() ; 
 		$vaTable5[] 	= array("1"=>" IV","2"=>"a. Tempat Berangkat","3"=>" " .$dbRow['place_from']) ;
@@ -55,10 +55,10 @@
 		$vaTable9 		= array() ; 
 		$nRow 			= 1 ; 
 		$ncab 			= "Kancab Bandung" ; 
-		$vaTable9[] 	= array("1"=>"","2"=>"No","3"=>"Nama","4"=>"NIP","5"=>"Gol","6"=>"Jabatan","7"=>"Unit Kerja") ;
+		$vaTable9[] 	= array("2"=>"No","3"=>"Nama","4"=>"NIP","5"=>"Gol","6"=>"Jabatan","7"=>"Unit Kerja") ;
 		foreach ($vaPengikut as $key => $vaData) {
 			$vaPengikut_Gol	= scSys::GetKeterangan("Title,Description","Id = '{$vaData['golongan']}'","sc_master") ;  ; 
-			$vaTable9[] 	= array("1"=>"","2"=>"".$nRow++."","3"=>$vaData['nama'],"4"=>$vaData['nip'],"5"=>" ".$vaPengikut_Gol['Title']."","6"=>$vaData['jabatan'],"7"=>$ncab) ;
+			$vaTable9[] 	= array("2"=>"".$nRow++."","3"=>$vaData['nama'],"4"=>$vaData['nip'],"5"=>"".$vaPengikut_Gol['Title']."","6"=>$vaData['jabatan'],"7"=>$ncab) ;
 		}
 
 		$vaDate 		= scDate::Date2Var($dbRow['date']) ;  
@@ -120,12 +120,11 @@
 											array("1"	=>array("width"=>4,"wrap"=>1),
 												  "2"	=>array("width"=>97,"wrap"=>1,"justification"=>"left") ) )) ;
 		$pdf->ezTable($vaTable9,"","",array("showLines"=>2,"showHeadings"=>0,"fontSize"=>$nFont, "cols"=> 
-											array("1"	=>array("width"=>4,"wrap"=>1,"justification"=>"center"),
-												  "2"	=>array("width"=>10,"wrap"=>1,"justification"=>"center"),
-												  "3"	=>array("width"=>26,"wrap"=>1,"justification"=>"center"),
-												  "4"	=>array("width"=>22,"wrap"=>1,"justification"=>"center"),
-												  "5"	=>array("width"=>6,"wrap"=>1,"justification"=>"center"),
-												  "6"	=>array("width"=>15,"wrap"=>1,"justification"=>"center"),
+											array("2"	=>array("width"=>4,"wrap"=>1,"justification"=>"center"),
+												  "3"	=>array("width"=>29,"wrap"=>1,"justification"=>"center"),
+												  "4"	=>array("width"=>16,"wrap"=>1,"justification"=>"center"),
+												  "5"	=>array("width"=>5,"wrap"=>1,"justification"=>"center"),
+												  "6"	=>array("width"=>29,"wrap"=>1,"justification"=>"center"),
 												  "7"	=>array("width"=>18,"wrap"=>1,"justification"=>"center")) )) ;
 		$pdf->ezTable($vaTable8,"","",array("showLines"=>1,"showHeadings"=>0,"fontSize"=>$nFont, "cols"=> 
 											array("1"	=>array("width"=>4,"wrap"=>1),
