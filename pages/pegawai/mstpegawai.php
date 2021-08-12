@@ -46,15 +46,28 @@
                     </div>
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <label>Golongan</label>
                                 <input type="text" name="cGolongan" id="cGolongan" placeholder="Golongan" 
                                 class="form-control sc-input-required sc-select" maxlength="100" data-sf="LoadPangkat">
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <label>Jabatan</label>
                                 <input type="text" name="cJabatan" id="cJabatan" placeholder="Jabatan" 
                                 class="form-control sc-input-required" maxlength="100">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="cPajak">Pajak</label>
+                                <select class="form-control sc-input-required" id="cPajak" name="cPajak">
+                                    <option selected>Choose...</option>
+                                    <option>5</option>
+                                    <option>10</option>
+                                    <option>15</option>
+                                    <option>20</option>
+                                    <option>25</option>
+                                    <option>30</option>
+                                    <option>35</option>
+                                </select>
                             </div>
                         </div>
                     </div>

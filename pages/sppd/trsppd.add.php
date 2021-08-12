@@ -55,20 +55,24 @@
                             <label for="inputjenis">Jenis Perjalanan</label>
                             <select class="form-control sc-input-required" id="inputjenis" name="inputjenis">
                                 <option selected>Choose...</option>
-                                <option>Dalam Kota</option>
-                                <option>Luar Kota</option>
+                                <option>DALAM KOTA</option>
+                                <option>LUAR KOTA</option>
                             </select>
                         </div>
                         </div>
                         </div>
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-sm-6">
-                            <label>Sarana Angkut yang dipergunakan</label>
-                            <input type="text" name="transport" id="transport" 
-                            class="form-control sc-input-required" 
-                            placeholder="Sarana Angkut yang dipergunakan">
-                        </div>
+                            <div class="col-md-6">
+                                <label for="transport">Sarana Angkut yang dipergunakan</label>
+                                <select class="form-control sc-input-required" id="transport" name="transport">
+                                    <option selected>Choose...</option>
+                                    <option>Pesawat Udara</option>
+                                    <option>Kapal Laut</option>
+                                    <option>Kereta Api</option>
+                                    <option>Kendaraan Dinas/Sendiri</option>
+                                </select>
+                            </div>
                         <div class="col-sm-3">
                             <label>Tempat Berangkat</label>
                             <input type="text" name="place_from" id="place_from" 

@@ -44,13 +44,15 @@
 		$vaArray 	= array("nip"=>$va['cNip'],"nama"=>$va['cNama'],
 							
 							"golongan"=>$va['cGolongan'],
-							"jabatan"=>$va['cJabatan']); 
+							"jabatan"=>$va['cJabatan'],
+							"pajak"=>$va['cPajak']); 
 		$vaInsert 	= array("username"=>GetSession("cSession_UserName")) ; 
 		$vaUpdate 	= array("username_update"=>GetSession("cSession_UserName")) ; 
 		$scDb->Update("pegawai",$vaArray,"nip = '$cNip'",true,$vaInsert,$vaUpdate) ; 
 		echo('
 				alert("Data sudah disimpan") ; 
-				OBJFORM_NEW.mstpegawai.Init() ; 
+				OBJFORM_NEW.mstpegawai.Init() ;
+				ChangePage("#'.str_replace("./pages/", "", $va['cPageSource']).'") ; 
 			') ; 
 	}
 
@@ -78,7 +80,7 @@
 						find("#cNama").val("'.$dbRow['nama'].'") ;
 						find("#cGolongan").val("'.$dbRow['golongan'].'") ;
 						find("#cJabatan").val("'.$dbRow['jabatan'].'") ;
-
+						find("#cPajak").val("'.$dbRow['pajak'].'") ;
 					} 
 					$("#myTabs li:eq(1) a").tab("show") ; 
 				') ; 

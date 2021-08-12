@@ -65,6 +65,7 @@ OBJFORM_NEW.mstpegawai.Init 	= function(){
 		find("#cNama").val("") ;
 		find("#cGolongan").val("") ;
 		find("#cJabatan").val("") ;
+		find("#cPajak").val("") ;
 
 	}
 }
