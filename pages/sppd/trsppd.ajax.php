@@ -105,7 +105,7 @@
 		$cUserName	= GetSession("cSession_UserName") ; 
 		$cKode 		= $va['code'] ; 
 		if($cKode 	== ""){
-			$cKey	= "/10A04/MGT/RT." . date("d") ."/" . date("m") . "/20" . date("y") . "" ; 
+			$cKey	= "/10A04/MGT/RT." . "03" ."/" . date("m") . "/20" . date("y") . "" ; 
 			$cKode  = scSys::GetLastInt($cKey,true,3) . $cKey ;  
 		}
 		$vaArray	= array("letter_content"=>$va['letter_content'],
