@@ -68,9 +68,9 @@
 
 		$vaTtd 			= array() ; 
 		$vaTtd[]		= array("x"=>"","1"=>$vaPejabat["jabatan"]) ; 
-		if($vaPejabat['nip'] !== scSys::GetConfig("sc_kepala_dinas")){
-			$vaTtd[]	= array("x"=>"","1"=>"An. Kepala Dinas " . scSys::GetConfig("sc_company") ) ; 
-		}
+		// if($vaPejabat['nip'] !== scSys::GetConfig("sc_kepala_dinas")){
+		// 	$vaTtd[]	= array("x"=>"","1"=>"An. Kepala Dinas " . scSys::GetConfig("sc_company") ) ; 
+		// }
 		$vaTtd[]		= array("x"=>"","1"=>"") ; 
 		$vaTtd[]		= array("x"=>"","1"=>"") ; 
 		$vaTtd[]		= array("x"=>"","1"=>"") ; 
@@ -221,7 +221,7 @@
 				}
 				elseif($vaPengikut_Gol['Title'] == "IX" || $vaPengikut_Gol['Title'] == "X" || $vaPengikut_Gol['Title'] == "XI" || $vaPengikut_Gol['Title'] == "XII") 
 				{
-					$BiayaPerjalanan = "40000";
+					$BiayaPerjalanan = "400000";
 				}
 			}
 			$pajak_pengikut			= $vaData['pajak'] * $BiayaPerjalanan / 100 ;
