@@ -67,10 +67,8 @@
 		$vaTanggal[]	= array("x"=>"","1"=>"Pada Tanggal","2"=>":","3"=>$vaDate["Tgl"] . " " . $vaDate['Bulan'] . " " . $vaDate['Tahun']) ; 
 
 		$vaTtd 			= array() ; 
-		$vaTtd[]		= array("x"=>"","1"=>$vaPejabat["jabatan"]) ; 
-		// if($vaPejabat['nip'] !== scSys::GetConfig("sc_kepala_dinas")){
-		// 	$vaTtd[]	= array("x"=>"","1"=>"An. Kepala Dinas " . scSys::GetConfig("sc_company") ) ; 
-		// }
+		$vaTtd[]		= array("x"=>"","1"=>"KANTOR CABANG BANDUNG") ; 
+
 		$vaTtd[]		= array("x"=>"","1"=>"") ; 
 		$vaTtd[]		= array("x"=>"","1"=>"") ; 
 		$vaTtd[]		= array("x"=>"","1"=>"") ; 
